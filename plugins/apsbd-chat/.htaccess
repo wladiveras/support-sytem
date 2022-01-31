@@ -1,0 +1,8 @@
+<FilesMatch "\.(ttf|otf|eot|woff|woff2|png|jpg|svg)$">
+	 <IfModule mod_headers.c>
+        SetEnvIf Origin "http(s)?://(www\.)?(portal.wladiveras.com|clariondigital.com.br
+argoscomercio.com)$" AccessControlAllowOrigin=$0
+        Header add Access-Control-Allow-Origin %{AccessControlAllowOrigin}e env=AccessControlAllowOrigin
+        Header merge Vary Origin
+    </IfModule>
+</FilesMatch>
